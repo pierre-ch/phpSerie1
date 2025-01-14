@@ -1,5 +1,10 @@
 {
   "autoload": {
-    "files": ["./files_to_include.php"]
+    "psr-4": {
+      "Controllers\\": "app\\Controllers",
+      "Models\\" : "app\\Models",
+      "Entity\\": "app\\Entity",
+      "Util\\": "util"
+    }
   }
 }
