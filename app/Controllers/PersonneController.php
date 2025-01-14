@@ -3,7 +3,7 @@
 namespace Controllers;
 
 use Models\PersonneModel;
-
+use Util\View;
 
 class PersonneController
 {
@@ -15,8 +15,10 @@ class PersonneController
         // Récupérer la liste des personnes
         $personnes = $model->getPersonnes();
 
-        // Afficher les données via la méthode render() de la classe View
+        // Instancier la vue
         $view = new View();
-        $view->render('personnes/list', ['personnes' => $personnes]);
+
+        // Utiliser la méthode render() pour afficher la vue
+        $view->render('Personne/list', ['personnes' => $personnes]);
     }
 }
