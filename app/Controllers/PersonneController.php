@@ -7,7 +7,7 @@ use Util\View;
 
 class PersonneController
 {
-    public function list()
+    public static function list()
     {
         // Instancier le modèle PersonneModel
         $model = new PersonneModel();
