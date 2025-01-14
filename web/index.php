@@ -1,8 +1,5 @@
 <?php
-require_once "../app/Entity/Personne.php";
-require_once "../app/Models/PersonneModel.php";
-require_once "../app/Controllers/PersonneController.php";
-require_once "../util/View.php";
+require_once "../files_to_include.php";
 use Controllers\PersonneController;
 $pController = new PersonneController;
 $pController->list();
