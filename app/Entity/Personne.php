@@ -2,6 +2,9 @@
 
 namespace Entity;
 
+use App\Models\PersonneModel;
+use App\View;
+
 class Personne
 {
     private $nom;
