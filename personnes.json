@@ -1,0 +1,5 @@
+[
+    { "nom": "n1", "prenom": "p1", "age": "a1", "sexe": "s1" },
+    { "nom": "n2", "prenom": "p2", "age": "a2", "sexe": "s2" },
+    { "nom": "n3", "prenom": "p3", "age": "a3", "sexe": "s3" }
+]

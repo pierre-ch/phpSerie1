@@ -11,6 +11,10 @@ class ComposerStaticInitc2a2354d726df6f47b6f025d99deaa9f
     );
 
     public static $prefixLengthsPsr4 = array (
+        'p' => 
+        array (
+            'phputil\\' => 8,
+        ),
         'U' => 
         array (
             'Util\\' => 5,
@@ -34,6 +38,11 @@ class ComposerStaticInitc2a2354d726df6f47b6f025d99deaa9f
     );
 
     public static $prefixDirsPsr4 = array (
+        'phputil\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phputil/json/lib',
+            1 => __DIR__ . '/..' . '/phputil/rtti/lib',
+        ),
         'Util\\' => 
         array (
             0 => __DIR__ . '/../..' . '/util',

@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'phputil\\' => array($vendorDir . '/phputil/json/lib', $vendorDir . '/phputil/rtti/lib'),
     'Util\\' => array($baseDir . '/util'),
     'Models\\' => array($baseDir . '/app/Models'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),

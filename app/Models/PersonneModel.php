@@ -6,38 +6,33 @@ use Entity\Personne;
 
 class PersonneModel
 {
-    function getPersonnes(){
-        return [
-            new Personne('n1,p1,a1,s1'),
-            new Personne('n2,p2,a2,s2'),
-            new Personne('n3,p3,a3,s3'),
-        ];
-    }
-
-    public function importFromJson(string $filePath): array
+    function getPersonnes()
     {
+        // Spécifiez le chemin vers votre fichier JSON
+        $filePath = '../personnes.json';
+
+        // Vérifiez si le fichier existe
         if (!file_exists($filePath)) {
-            throw new \Exception("Le fichier JSON n'existe pas : " . $filePath);
+            throw new \Exception("Le fichier personnes.json est introuvable.");
         }
 
-        $jsonContent = file_get_contents($filePath);
-        $data = json_decode($jsonContent, true);
+        // Lire et décoder le fichier JSON
+        $jsonData = file_get_contents($filePath);
+        $personnesData = json_decode($jsonData, true);
 
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new \Exception("Erreur de parsing JSON : " . json_last_error_msg());
+        if ($personnesData === null) {
+            throw new \Exception("Échec du décodage JSON : " . json_last_error_msg());
         }
 
+        // Convertir les données en objets Personne
         $personnes = [];
-        foreach ($data as $personData) {
-            if (
-                isset($personData['nom'], $personData['prenom'], $personData['age'], $personData['sexe'])
-            ) {
-                $personnes[] = new Personne(
-                    sprintf('%s,%s,%s,%s', $personData['nom'], $personData['prenom'], $personData['age'], $personData['sexe'])
-                );
-            } else {
-                throw new \Exception("Données JSON invalides pour une personne : " . json_encode($personData));
-            }
+        foreach ($personnesData as $data) {
+            $personnes[] = new Personne(
+                $data['nom'],
+                $data['prenom'],
+                $data['age'],
+                $data['sexe']
+            );
         }
 
         return $personnes;
