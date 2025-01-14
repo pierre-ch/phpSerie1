@@ -6,6 +6,10 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitc2a2354d726df6f47b6f025d99deaa9f
 {
+    public static $files = array (
+        '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'U' => 
         array (
@@ -14,6 +18,10 @@ class ComposerStaticInitc2a2354d726df6f47b6f025d99deaa9f
         'M' => 
         array (
             'Models\\' => 7,
+        ),
+        'F' => 
+        array (
+            'FastRoute\\' => 10,
         ),
         'E' => 
         array (
@@ -33,6 +41,10 @@ class ComposerStaticInitc2a2354d726df6f47b6f025d99deaa9f
         'Models\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/Models',
+        ),
+        'FastRoute\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
         'Entity\\' => 
         array (
