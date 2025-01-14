@@ -1,0 +1,5 @@
+{
+  "autoload": {
+    "files": ["./files_to_include.php"]
+  }
+}
