@@ -2,8 +2,7 @@
 
 namespace Entity;
 
-use App\Models\PersonneModel;
-use App\View;
+use Models\PersonneModel;
 
 class Personne
 {

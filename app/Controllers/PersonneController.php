@@ -2,6 +2,9 @@
 
 namespace Controllers;
 
+use Models\PersonneModel;
+
+
 class PersonneController
 {
     public function list()
