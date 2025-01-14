@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-class PersonneControllers
+class PersonneController
 {
 
 }
