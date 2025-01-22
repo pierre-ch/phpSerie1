@@ -17,6 +17,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
 
     $r->addRoute('GET', '/Personne/list', ['Controllers\PersonneController', 'list']);
     $r->addRoute('GET', '/Personne/exportJSON', ['Controllers\PersonneController', 'exportJSON']);
+    $r->addRoute('GET', '/Personne/exportXML', ['Controllers\PersonneController', 'exportXML']);
 
     #$r->addRoute(['GET','POST'], '/Personne/list', 'list');
 

@@ -41,4 +41,32 @@ class PersonneController
         echo $jsonData;
     }
 
+
+    public static function exportXML()
+    {
+        // Instancier le modèle PersonneModel
+        $model = new PersonneModel();
+
+        // Récupérer la liste des personnes
+        $personnes = $model->getPersonnes();
+
+        // Créer un nouvel objet SimpleXMLElement
+        $xml = new \SimpleXMLElement('<personnes/>');
+
+        // Ajouter les données à l'objet XML
+        foreach ($personnes as $personne) {
+            $personneNode = $xml->addChild('personne');
+            foreach ($personne as $key => $value) {
+                $personneNode->addChild($key, htmlspecialchars($value));
+            }
+        }
+
+        // Définir les en-têtes HTTP pour le téléchargement du fichier XML
+        header('Content-Type: application/xml');
+        header('Content-Disposition: attachment; filename="personnes.xml"');
+
+        // Envoyer le contenu XML
+        echo $xml->asXML();
+    }
+
 }
