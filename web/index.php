@@ -12,7 +12,7 @@ require_once $autoloadPath;
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
 
     $r->get('/', function() {
-        echo 'Bienvenue :)';
+        echo 'Bienvenue ';
     });
 
     $r->addRoute('GET', '/Personne/list', ['Controllers\PersonneController', 'list']);

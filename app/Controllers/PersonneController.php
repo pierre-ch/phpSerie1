@@ -56,9 +56,10 @@ class PersonneController
         // Ajouter les données à l'objet XML
         foreach ($personnes as $personne) {
             $personneNode = $xml->addChild('personne');
-            foreach ($personne as $key => $value) {
-                $personneNode->addChild($key, htmlspecialchars($value));
-            }
+            $personneNode->addChild('nom', htmlspecialchars($personne->getNom()));
+            $personneNode->addChild('prenom', htmlspecialchars($personne->getPrenom()));
+            $personneNode->addChild('adresse', htmlspecialchars($personne->getAdresse()));
+            $personneNode->addChild('statut', htmlspecialchars($personne->getStatut()));
         }
 
         // Définir les en-têtes HTTP pour le téléchargement du fichier XML
